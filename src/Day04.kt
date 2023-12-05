@@ -2,7 +2,8 @@ import kotlin.math.pow
 
 fun main() {
     fun getIntersectSize(line: String): Int {
-        val winningNumbers = line.split(":")[1].split("|")[0].trim().split("\\s+".toRegex()).map { it.toInt() }.toHashSet()
+        val winningNumbers =
+            line.split(":")[1].split("|")[0].trim().split("\\s+".toRegex()).map { it.toInt() }.toHashSet()
         val myNumbers = line.split(":")[1].split("|")[1].trim().split("\\s+".toRegex()).map { it.toInt() }.toHashSet()
         return winningNumbers.intersect(myNumbers).size
     }

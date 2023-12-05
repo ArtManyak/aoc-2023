@@ -8,7 +8,7 @@ fun main() {
         if (!line[startPos].isDigit()) startPos++
         if (!line[endPos].isDigit()) endPos--
         val number = line.substring(startPos..endPos)
-        val newLine = line.replaceRange(startPos..endPos, ".".repeat(endPos-startPos+1))
+        val newLine = line.replaceRange(startPos..endPos, ".".repeat(endPos - startPos + 1))
         return Pair(newLine, number.toInt())
     }
 
@@ -46,8 +46,7 @@ fun main() {
             for (j in lines[i].indices) {
                 if (lines[i][j] == '*') {
                     val numbersAround = getNumbersAndCleanAround(lines, i, j)
-                    if (numbersAround.size == 2)
-                        res.add(numbersAround[0] * numbersAround[1])
+                    if (numbersAround.size == 2) res.add(numbersAround[0] * numbersAround[1])
                 }
             }
         }
