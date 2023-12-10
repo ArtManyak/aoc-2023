@@ -1,32 +1,32 @@
-class Point(val name: String) {
-    lateinit var left: Point
-    lateinit var right: Point
-}
-
-//copy-past)))
-fun findLCM(a: Long, b: Long): Long {
-    val larger = if (a > b) a else b
-    val maxLcm = a * b
-    var lcm = larger
-    while (lcm <= maxLcm) {
-        if (lcm % a == 0L && lcm % b == 0L) {
-            return lcm
-        }
-        lcm += larger
-    }
-    return maxLcm
-}
-
-//copy-past)))
-fun findLCMOfListOfNumbers(numbers: List<Long>): Long {
-    var result = numbers[0]
-    for (i in 1 until numbers.size) {
-        result = findLCM(result, numbers[i])
-    }
-    return result
-}
-
 fun main() {
+    class Point(val name: String) {
+        lateinit var left: Point
+        lateinit var right: Point
+    }
+
+    //copy-past)))
+    fun findLCM(a: Long, b: Long): Long {
+        val larger = if (a > b) a else b
+        val maxLcm = a * b
+        var lcm = larger
+        while (lcm <= maxLcm) {
+            if (lcm % a == 0L && lcm % b == 0L) {
+                return lcm
+            }
+            lcm += larger
+        }
+        return maxLcm
+    }
+
+    //copy-past)))
+    fun findLCMOfListOfNumbers(numbers: List<Long>): Long {
+        var result = numbers[0]
+        for (i in 1 until numbers.size) {
+            result = findLCM(result, numbers[i])
+        }
+        return result
+    }
+
     fun createPointsMap(input: List<String>): MutableMap<String, Point> {
         val pointByName = mutableMapOf<String, Point>()
         for (line in input.drop(2)) {
