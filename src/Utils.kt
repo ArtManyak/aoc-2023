@@ -7,7 +7,7 @@ import kotlin.io.path.readText
  */
 fun readInput(name: String) = Path("src/$name.txt").readLines()
 
-fun readInputParts(name: String) = Path("src/$name.txt").readText().split("\n\n")
+fun readInputParts(name: String) = Path("src/$name.txt").readText().split(System.lineSeparator().repeat(2))
 
 /**
  * The cleaner shorthand for printing output.
