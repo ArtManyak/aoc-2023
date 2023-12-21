@@ -13,3 +13,4 @@ fun readInputParts(name: String) = Path("src/$name.txt").readText().split(System
  * The cleaner shorthand for printing output.
  */
 fun Any?.println() = println(this)
+fun Any?.print() = print("$this ")
